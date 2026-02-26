@@ -1,6 +1,6 @@
 <?php
  function connectDB() {     
-    $ini = parse_ini_file("config.ini");
+    $ini = parse_ini_file("db.ini");
     $db = new mysqli($ini['host'], $ini['username'], $ini['password'], $ini['databasename']);
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);

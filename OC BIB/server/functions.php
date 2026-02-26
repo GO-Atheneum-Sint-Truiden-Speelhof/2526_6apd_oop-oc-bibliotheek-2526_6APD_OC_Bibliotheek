@@ -25,4 +25,16 @@
         $db -> close();
         return $result->fetch_row()[0];
     }
+
+    function getPasswordByUsername($username){
+        $db = connectDB();
+        $qry = "SELECT `Password` FROM `user` WHERE `Username` = ?";
+        $stmt = $db->prepare($qry);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $result->num_rows === 0 ? die("Gebruiker niet gevonden of wachtwoord incorrect") : null;
+        $db -> close();
+        return $result->fetch_row()[0];
+    }
 ?>

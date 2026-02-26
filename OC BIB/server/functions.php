@@ -1,5 +1,5 @@
 <?php
- function connectDB() {     
+    function connectDB() {     
     $ini = parse_ini_file("db.ini");
     $db = new mysqli($ini['host'], $ini['username'], $ini['password'], $ini['databasename']);
     if ($db->connect_error) {

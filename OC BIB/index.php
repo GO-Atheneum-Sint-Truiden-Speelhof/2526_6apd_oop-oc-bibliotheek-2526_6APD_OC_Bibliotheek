@@ -22,7 +22,7 @@
 			Fout bij toevoegen van boek.
 		</div>
 	<?php } ?>
-	<div class="card-header"><h3 class="text-center fond-weight-light my-4">Boek toevoegen></h3></div>
+	<div class="card-header"><h3 class="text-center fond-weight-light my-4">Boek toevoegen</h3></div>
 	<div class="card-body">
 		<form action="registerBook.php" method="post">
 			<div class="row mb-3">

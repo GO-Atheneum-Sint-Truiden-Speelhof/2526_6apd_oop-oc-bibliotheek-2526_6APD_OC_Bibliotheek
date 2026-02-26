@@ -27,6 +27,7 @@
         if (isset($_POST['isbn']) && isset($_POST['titel'])) {
             $existingBook = getBookByISBN($_POST['isbn']);
             $file = showqrcode($_POST['isbn'], $_POST['titel']);
+            echo "File generated: " . $file; // Debugging output
             if ($file) {
                 addBook($file);
                 $_SESSION['status'] = 'success';
@@ -35,7 +36,7 @@
             } else {
                 // Handle QR code generation failure
                 $_SESSION['status'] = 'error';
-                header("Location: index.php?qr=error");
+                //header("Location: index.php?qr=error");
                 exit;
             }
         } else {

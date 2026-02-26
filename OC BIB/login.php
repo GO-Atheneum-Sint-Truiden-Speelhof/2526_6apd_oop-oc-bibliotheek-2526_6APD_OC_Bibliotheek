@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../server/functions.php';
+include 'server/functions.php';
 
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $username = $_POST['user'];
